@@ -85,6 +85,68 @@ ssh-add -K ~/.ssh/id_rsa
 <br>
 <br>
 
+## ▶ Mercado Libre - SSH Set Up
+**✔ Generate SSH Keys**
+> go to .ssh folder
+```bash
+cd ~/.ssh
+```
+
+> generate a SSH key's for Mercado Libre
+Mercado Libre
+```bash
+ssh-keygen -t rsa -b 4096 -C "johndoe@mercadolibre.com"  # name of the key is mercadolibre
+```
+
+Melisource
+```bash
+ssh-keygen -t rsa -b 4096 -C "..."  # name of the key is melisource
+```
+
+> add identity file to the ssh config file
+```bash
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/mercadolibre
+
+Host github.com-emu
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/melisource
+  AddKeysToAgent yes
+  UseKeychain yes # macOS
+```
+
+---
+
+**✔ Add Keys to Github**
+> Go to your mercadolibre Github account and add the SSH key
+```bash
+pbcopy < ~/.ssh/mercadolibre.pub
+```
+
+> Go to your melisource Github account and add the SSH key
+```bash
+pbcopy < ~/.ssh/melisource.pub
+```
+
+---
+
+**✔ Test**
+
+We test the SSH connection to Github (the identity file is specified in the config file)
+
+> test the SSH connection for the mercadolibre account
+```bash
+ssh -T git@github.com  # it should return "Hi username! ..." with the username of the mercadolibre account
+```
+
+> test the SSH connection for the melisource account
+```bash 
+ssh -T git@github.com-emu  # it should return "Hi username! ..." with the username of the melisource account
+```
+
 ## ▶ Terminal
 in progress...
 
