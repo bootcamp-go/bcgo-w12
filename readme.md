@@ -109,15 +109,17 @@ Host github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/mercadolibre
+  IdentitiesOnly yes
   AddKeysToAgent yes
-  UseKeychain yes # macOS
+  UseKeychain yes
   
 Host github.com-emu
   HostName github.com
   User git
   IdentityFile ~/.ssh/melisource
+  IdentitiesOnly yes
   AddKeysToAgent yes
-  UseKeychain yes # macOS
+  UseKeychain yes
 ```
 
 ---
