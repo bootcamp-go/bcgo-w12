@@ -109,7 +109,9 @@ Host github.com
   HostName github.com
   User git
   IdentityFile ~/.ssh/mercadolibre
-
+  AddKeysToAgent yes
+  UseKeychain yes # macOS
+  
 Host github.com-emu
   HostName github.com
   User git
