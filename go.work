@@ -1,0 +1,6 @@
+go 1.21.2
+
+use (
+	./02-Go-Bases/01-Intro/app
+	./02-Go-Bases/03-Functions
+)
