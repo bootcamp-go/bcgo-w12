@@ -4,8 +4,16 @@ use (
 	./02-Go-Bases/01-Intro/app
 	./02-Go-Bases/03-Functions
 	./02-Go-Bases/04-Unit-Testing/app
+	./02-Go-Bases/04-Unit-Testing/solutions/1
+	./02-Go-Bases/04-Unit-Testing/solutions/2
+	./02-Go-Bases/04-Unit-Testing/solutions/3
+	./02-Go-Bases/04-Unit-Testing/solutions/4
+	./02-Go-Bases/04-Unit-Testing/solutions/5
 	./02-Go-Bases/05-Structs
+	./02-Go-Bases/05-Structs/solutions/app1
 	./02-Go-Bases/06-Interfaces
+	./02-Go-Bases/06-Interfaces/solutions/2
 	./02-Go-Bases/07-Error-Handling/app
 	./02-Go-Bases/07-Error-Handling/app-2
+	./02-Go-Bases/07-Error-Handling/solutions/5
 )
