@@ -16,4 +16,5 @@ use (
 	./02-Go-Bases/07-Error-Handling/app
 	./02-Go-Bases/07-Error-Handling/app-2
 	./02-Go-Bases/07-Error-Handling/solutions/5
+	./03-Go-Web/01-Intro/chi
 )
