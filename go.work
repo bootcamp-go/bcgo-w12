@@ -1,4 +1,4 @@
-go 1.21.2
+go 1.21.4
 
 use (
 	./02-Go-Bases/01-Intro/app
@@ -17,4 +17,6 @@ use (
 	./02-Go-Bases/07-Error-Handling/app-2
 	./02-Go-Bases/07-Error-Handling/solutions/5
 	./03-Go-Web/01-Intro/chi
+	./03-Go-Web/02-Context/
+	./03-Go-Web/02-Get/
 )
