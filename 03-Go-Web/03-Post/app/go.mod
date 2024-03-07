@@ -1,4 +1,4 @@
-module go-web/get
+module go-web/post/app
 
 go 1.21.2
 

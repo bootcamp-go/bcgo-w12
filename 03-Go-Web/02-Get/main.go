@@ -1,8 +1,8 @@
 package main
 
 import (
+	"go-web/get/handler"
 	"net/http"
-	"scaff/cmd/server/handler"
 
 	"github.com/go-chi/chi/v5"
 )
