@@ -21,4 +21,5 @@ use (
 	./03-Go-Web/02-Get
 	./03-Go-Web/03-Post/app
 	./03-Go-Web/04-Structure/app
+	./03-Go-Web/05-Put-Patch-Delete/app
 )
