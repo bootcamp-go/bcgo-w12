@@ -25,4 +25,5 @@ use (
 	./03-Go-Web/06-Enviroment-Variables/app
 	./03-Go-Web/06-Enviroment-Variables/examples/02-env
 	./03-Go-Web/07-Unit-Testing-API/code/movies-testing
+	./03-Go-Web/08-Middlewares
 )
