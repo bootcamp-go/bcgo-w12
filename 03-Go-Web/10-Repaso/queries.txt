@@ -1,0 +1,7 @@
+GET /vehicles/dimensions?length={min_length}-{max_length}&width={min_width}-{max_width}
+GET /vehicles/dimensions?lenghtGt={min_length}&lenghtLt={max_length}&widthGt={min_width}&widthLt={max_width}
+
+example
+GET /vehicles/dimensions    // without any query parameters
+
+GET /vehicles/dimensions?length=100-200&width=50-100    // with query parameters
