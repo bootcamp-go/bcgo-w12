@@ -13,6 +13,10 @@ var (
 	ErrStockRowsAffected = errors.New("number of rows affected is not the expected")
 )
 
+func NewStockMySQL(db *sql.DB) *StockMySQL {
+	return &StockMySQL{db: db}
+}
+
 // type StockScheme struct {
 // 	ID        sql.NullInt64
 // 	Name      sql.NullString

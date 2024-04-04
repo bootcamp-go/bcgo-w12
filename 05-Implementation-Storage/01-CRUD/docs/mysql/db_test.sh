@@ -1,0 +1,1 @@
+mysql -u root -p < ./docs/mysql/stocks_test_db.sql
