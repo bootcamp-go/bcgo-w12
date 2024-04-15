@@ -29,4 +29,6 @@ use (
 	./03-Go-Web/10-Repaso/foods
 	./03-Go-Web/10-Repaso/proyect
 	./05-Implementation-Storage/01-CRUD
+	./06-testing/03-Doubles
+	./Playground/t
 )
