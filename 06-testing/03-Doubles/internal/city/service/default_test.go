@@ -5,6 +5,7 @@ import (
 	"go-testing/doubles/internal/city/repository"
 	"go-testing/doubles/internal/logger"
 	"go-testing/doubles/internal/weather"
+	"go-testing/doubles/platform/mock"
 	"testing"
 	"time"
 
@@ -51,6 +52,74 @@ func TestDefault_AddCity(t *testing.T) {
 			Date:      time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC),
 		}, cityRpWriterMock.Calls.SaveCityArgs)
 		require.Equal(t, 1, cityRpWriterMock.Calls.SaveCityCount)
+	})
+
+	t.Run("fail to add a city - invalid params", func(t *testing.T) {
+		// arrange
+
+		// act
+
+		// assert
+	})
+
+	t.Run("fail to add a city - temperature error", func(t *testing.T) {
+		// arrange
+
+		// act
+
+		// assert
+	})
+
+	t.Run("fail to add a city - save city error", func(t *testing.T) {
+		// arrange
+
+		// act
+
+		// assert
+	})
+}
+
+func TestDefault_2_AddCity(t *testing.T) {
+	t.Run("success to add a city", func(t *testing.T) {
+		// arrange
+		// - logger
+		lgDummy := logger.NewDummy()
+		// - weather
+		weatherStub := weather.NewStub()
+		weatherStub.FuncGetTemperature = func(city string) (float64, error) {
+			return 20, nil
+		}
+		// - repository
+		cityRpWriterMock := repository.NewMockSimple()
+		cityRpWriterMock.On("SaveCity", error(nil))
+		// cityRpWriterMock.ExpectedCalls["SaveCity"] = mock.Values{error(nil)}
+		sv := NewDefault(cityRpWriterMock, weatherStub, lgDummy)
+
+		// act
+		c, err := sv.AddCity("city", "country", 1000, time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC))
+
+		// assert
+		require.NoError(t, err)
+		require.Equal(t, city.City{
+			ID: 	   0,
+			Name:      "city",
+			Country:   "country",
+			Population: 1000,
+			Temperature: 20,
+			Date:      time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC),
+		}, c)
+		require.True(t, cityRpWriterMock.Calls["SaveCity"].Ok)
+		expectedArgs := mock.Values{
+			city.City{
+				ID: 	   0,
+				Name:      "city",
+				Country:   "country",
+				Population: 1000,
+				Temperature: 20,
+				Date: 	time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC),
+			},
+		}
+		require.Equal(t, expectedArgs, cityRpWriterMock.Calls["SaveCity"].Args)
 	})
 
 	t.Run("fail to add a city - invalid params", func(t *testing.T) {
