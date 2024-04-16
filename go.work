@@ -31,5 +31,6 @@ use (
 	./05-Implementation-Storage/01-CRUD
 	./06-testing/03-Doubles
 	./06-testing/05-Coverage-Linter
+	./06-testing/06-http
 	./Playground/t
 )
